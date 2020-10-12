@@ -12,7 +12,7 @@ DistillationLossWeights = namedtuple('DistillationLossWeights',
                      
 class distill_loss(nn.Module):
     def __init__(self, origin_model, subnet_model, 
-                temperature=1.0, loss_weights=DistillationLossWeights(0.5,0.5,0)):
+                temperature=1.0, loss_weights=DistillationLossWeights(0.5,0.5,0.)):
         super(distill_loss, self).__init__()
         self.origin_model = origin_model
         self.subnet_model = subnet_model
